@@ -8,5 +8,5 @@ import { Country } from '../../interfaces/country.interface';
   templateUrl: './country-list.html',
 })
 export class CountryListComponet {
-  countries = input.required<Country[]>();
+  countries = input<Country[]>([]);
 }
