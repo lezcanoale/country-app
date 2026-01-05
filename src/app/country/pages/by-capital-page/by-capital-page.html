@@ -1,2 +1,2 @@
-<country-search-input placeholder="Buscar por capital de mi país"/>
-<country-list/>
+<country-search-input placeholder="Buscar por capital de mi país" (value)="onSearch($event)"/>
+<country-list [countries]="countries()"/>
