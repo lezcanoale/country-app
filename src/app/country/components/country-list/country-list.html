@@ -18,8 +18,8 @@
           <td><img [src]="country.flagsvg" [alt]="country.name" class="w-10"/></td>
           <td>{{country.name}}</td>
           <td>{{country.capital}}</td>
-          <td class="badge badge-secondary">{{country.population | number}}</td>
-          <td class="link-primary cursor-pointer">Más información</td>
+          <td class="badge badge-secondary mt-3">{{country.population | number}}</td>
+          <td class="link-primary cursor-pointer" routerLink="/by/BR">Más información</td>
         </tr>
       }
     </tbody>
