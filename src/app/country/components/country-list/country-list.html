@@ -19,9 +19,37 @@
           <td>{{country.name}}</td>
           <td>{{country.capital}}</td>
           <td class="badge badge-secondary mt-3">{{country.population | number}}</td>
-          <td class="link-primary cursor-pointer" routerLink="/by/BR">Más información</td>
+          <td class="link-primary cursor-pointer" [routerLink]="['/country/by/',country.cca2]">Más información</td>
         </tr>
       }
+
+    <!--  -->
+<!-- Error Message -->
+@if(errorMessage()){
+  <tr>
+    <td colspan="8" class="text-center bg-red-600 text-white py-4">
+      {{errorMessage()?.message}}
+    </td>
+  </tr>
+}
+
+  <!-- No Results -->
+  @if(countries().length === 0 && !isLoading() && !errorMessage()){
+    <tr>
+      <td colspan="8" class="text-center py-4">
+        No se encontraron resultados.
+      </td>
+    </tr>
+  }
+
+  <!-- Loading -->
+  @if(isLoading()){
+    <tr>
+      <td colspan="8" class="text-center py-4">
+        Buscando...
+      </td>
+    </tr>
+  }
     </tbody>
   </table>
 </div>
